@@ -4,6 +4,7 @@
 body {
   background-color: var(--color-light);
   font-family: var(--font-poppins-regular);
+  @apply flex justify-center items-center;
 }
 
 @theme {
