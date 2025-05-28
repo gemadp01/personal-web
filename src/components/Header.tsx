@@ -1,21 +1,11 @@
-import { useEffect, useState } from "react";
 import { DropdownMenu } from "./ui/DropdownMenu";
+import { useIsSmallScreen } from "../lib/utils";
 
 export const Header = () => {
-  const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
+  const isSmallScreen = useIsSmallScreen(640);
 
   const navItems = ["About", "Projects", "Contact"];
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth >= 640);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
   return (
     <header className="min-w-full px-6 flex justify-between items-center h-24">
       <h2 className="text-primary">Test</h2>
