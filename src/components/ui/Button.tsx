@@ -1,15 +1,14 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const button = cva(
-  "inline-flex items-center gap-2 px-4 py-2 mt-2 rounded-md shadow-sm transition font-medium hover:bg-gray-100",
+  "inline-flex items-center gap-2 px-5 py-2 mt-2 rounded-md shadow-sm transition font-medium hover:bg-gray-100",
   {
     variants: {
       color: {
-        primary: "border border-primary text-primary",
-        secondary: "bg-primary text-secondary",
+        primary: "bg-light text-primary border border-dark",
+        secondary: "bg-dark text-secondary",
       },
       size: {
         sm: "text-sm",
@@ -19,7 +18,7 @@ const button = cva(
     },
     defaultVariants: {
       color: "primary",
-      size: "md",
+      size: "sm",
     },
   }
 );
@@ -49,13 +48,9 @@ export const Button: React.FC<ButtonProps> = ({
 
   const content = (
     <>
-      {icon && iconPosition === "left" && (
-        <ArrowLeft className="ml-2 w-4 h-4" />
-      )}
+      {icon && iconPosition === "left" && <span>{icon}</span>}
       {children}
-      {icon && iconPosition === "right" && (
-        <ArrowRight className="mr-2 w-4 h-4" />
-      )}
+      {icon && iconPosition === "right" && <span>{icon}</span>}
     </>
   );
 
