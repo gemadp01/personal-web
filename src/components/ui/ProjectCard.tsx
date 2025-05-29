@@ -9,8 +9,9 @@ type ProjectCardProps = {
   link?: string;
   buttonTitle: string;
   iconPosition?: "left" | "right";
-  withIcon?: boolean;
+  withIcon?: React.ReactNode;
   color?: "primary" | "secondary";
+  size?: "sm" | "md" | "lg";
 };
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -23,6 +24,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   iconPosition = "right",
   withIcon = false,
   color,
+  size,
 }) => {
   const isInternal = link?.startsWith("/");
 
@@ -38,9 +40,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           link={isInternal ? link : undefined}
           href={!isInternal ? link : undefined}
           external={!isInternal}
-          icon={withIcon}
+          icon={withIcon ? withIcon : undefined}
           iconPosition={withIcon ? iconPosition : undefined}
           color={color}
+          size={size}
         >
           {buttonTitle}
         </Button>
