@@ -56,13 +56,13 @@ export const dataDummy: Project[] = [
     subtitle: "UI UX",
     title: "My Tayu Design System",
     description: "My Tayu Design System with Figma",
-    link: "https://github.com/gemadp01/usjwp-todolist",
+    link: "https://www.figma.com/design/EdA9EdmO8bLSiVubG9dLmS/Wireframe-TAYU?node-id=0-1&t=ltXPbBK2adhUqTmH-1",
   },
   {
     image: "/your-image-path.jpg",
     subtitle: "UI UX",
     title: "Personal Web Design System",
     description: "Personal Web Design System with Figma",
-    link: "https://github.com/gemadp01/usjwp-todolist",
+    link: "https://www.figma.com/design/49wpoz7gtVv3PvbLH8yowo/Personal-Website?node-id=234-61&t=VASS8SKuOqw0906o-1",
   },
 ];
