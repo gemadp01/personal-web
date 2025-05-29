@@ -1,8 +1,12 @@
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { Menu } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
-export const DropdownMenu = ({ ...props }) => {
+export const DropdownMenu = ({ ...props }: { items: string[] }) => {
   const { items } = props;
+  const location = useLocation();
+  const currentPath = location.pathname;
+
   return (
     <DropdownMenuPrimitive.Root>
       <DropdownMenuPrimitive.Trigger className="relative" asChild>
@@ -10,12 +14,26 @@ export const DropdownMenu = ({ ...props }) => {
           <Menu className="w-6 h-6" />
         </button>
       </DropdownMenuPrimitive.Trigger>
-      <DropdownMenuPrimitive.Content className="border" align="end">
-        {items.map((item: string) => (
-          <DropdownMenuPrimitive.Item key={item}>
-            {item}
-          </DropdownMenuPrimitive.Item>
-        ))}
+      <DropdownMenuPrimitive.Content className="border rounded" align="end">
+        {items.map((item: string) => {
+          const path = `/${item.toLowerCase()}`;
+          const isActive = currentPath === path;
+          return (
+            <DropdownMenuPrimitive.Item asChild className="flex">
+              <Link
+                key={item}
+                to={path}
+                className={`flex px-10 py-3 ${
+                  isActive
+                    ? "text-light pointer-events-none bg-dark"
+                    : "text-primary hover:text-light hover:bg-dark"
+                }`}
+              >
+                {item}
+              </Link>
+            </DropdownMenuPrimitive.Item>
+          );
+        })}
       </DropdownMenuPrimitive.Content>
     </DropdownMenuPrimitive.Root>
   );
