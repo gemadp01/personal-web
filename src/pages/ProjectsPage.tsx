@@ -11,11 +11,11 @@ const ProjectsPage = () => {
       <section id="projects" className="w-full space-y-8 px-10">
         <div className="text-center space-y-6">
           {isSmallScreen ? (
-            <h1 className="space-y-5">Projects</h1>
+            <h1 className="space-y-5 dark:text-secondary">Projects</h1>
           ) : (
-            <h4 className="space-y-3">Projects</h4>
+            <h4 className="space-y-3 dark:text-secondary">Projects</h4>
           )}
-          <p className="text-lg text-seventh">
+          <p className="text-lg text-seventh dark:text-extended">
             Here are some selected projects that showcase my skills, experience,
             and design approach.
           </p>

@@ -7,8 +7,9 @@ const button = cva(
   {
     variants: {
       color: {
-        primary: "bg-light text-primary border border-dark",
-        secondary: "bg-dark text-secondary",
+        primary:
+          "bg-light text-primary border border-dark dark:bg-dark dark:text-secondary dark:border-light",
+        secondary: "bg-dark text-secondary dark:bg-light dark:text-primary",
       },
       size: {
         sm: "text-sm",

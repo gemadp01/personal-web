@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./assets/fonts/poppins.css";
+@custom-variant dark (&:where(.dark, .dark *));
 
 body {
   background-color: var(--color-light);
@@ -12,6 +13,7 @@ body {
   --color-dark: #343a40;
   --color-light: #e9ecef;
   --color-extended: #adb5bd;
+  --color-sixth: #dee2e6;
   --color-seventh: #6c757d;
   --color-primary: #212529;
   --color-secondary: #f8f9fa;

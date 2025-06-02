@@ -11,12 +11,12 @@ export const DropdownMenu = ({ ...props }: { items: string[] }) => {
     <DropdownMenuPrimitive.Root>
       <DropdownMenuPrimitive.Trigger asChild>
         <button>
-          <Menu className="w-6 h-6" />
+          <Menu className="w-6 h-6 dark:text-secondary" />
         </button>
       </DropdownMenuPrimitive.Trigger>
       <DropdownMenuPrimitive.Portal>
         <DropdownMenuPrimitive.Content
-          className="border border-dark rounded bg-secondary"
+          className="border border-dark rounded bg-secondary "
           align="end"
         >
           {items.map((item: string) => {
