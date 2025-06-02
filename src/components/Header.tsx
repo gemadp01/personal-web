@@ -20,8 +20,8 @@ export const Header = () => {
         {isSmallScreen ? (
           <ul className="flex gap-6">
             {navItems.map((item) => {
-              const path = `/${item.toLowerCase()}`;
-              const isActive = currentPath.startsWith(path);
+              const path: string = `/${item.toLowerCase()}`;
+              const isActive: boolean = currentPath === path;
               return (
                 <li key={item}>
                   <Link

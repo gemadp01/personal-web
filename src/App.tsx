@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import AboutPage from "./pages/AboutPage";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
@@ -11,11 +11,11 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Navigate to="/about" />} />
+        <Route path="/" element={<AboutPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="*" Component={NotFoundPage} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
     </>
