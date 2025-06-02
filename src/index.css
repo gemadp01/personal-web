@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./assets/fonts/poppins.css";
+@custom-variant dark (&:where(.dark, .dark *));
 
 body {
   background-color: var(--color-light);
