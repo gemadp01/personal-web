@@ -5,8 +5,12 @@ import { Footer } from "./components/Footer";
 import ProjectsPage from "./pages/ProjectsPage";
 import ContactPage from "./pages/ContactPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import { useContext } from "react";
+import { DarkMode } from "./context/DarkMode";
 
 function App() {
+  const { darkMode, setDarkMode } = useContext(DarkMode);
+  console.log(darkMode);
   return (
     <>
       <Header />
