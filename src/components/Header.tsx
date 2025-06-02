@@ -6,9 +6,9 @@ import { SwitchButton } from "./ui/SwitchButton";
 
 export const Header = () => {
   const location = useLocation();
-  const currentPath = location.pathname;
+  const currentPath: string = location.pathname;
 
-  const isSmallScreen = useIsSmallScreen(640);
+  const isSmallScreen: boolean = useIsSmallScreen(640);
 
   const navItems = ["About", "Projects", "Contact"];
 

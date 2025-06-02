@@ -7,7 +7,7 @@ import { Mail, MapPin } from "lucide-react";
 import { useIsSmallScreen } from "../lib/utils";
 
 const ContactPage = () => {
-  const isSmallScreen = useIsSmallScreen(640);
+  const isSmallScreen: boolean = useIsSmallScreen(640);
 
   return (
     <main className="min-h-[80vh] flex justify-center items-center text-center">

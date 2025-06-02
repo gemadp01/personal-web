@@ -26,7 +26,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   color,
   size,
 }) => {
-  const isInternal = link?.startsWith("/");
+  const isInternal: boolean | undefined = link?.startsWith("/");
 
   return (
     <div className="rounded-xl overflow-hidden shadow-xl bg-white w-80">
