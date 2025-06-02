@@ -4,7 +4,7 @@ export function useIsSmallScreen(breakpoint: number = 640): boolean {
   const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
 
   useEffect(() => {
-    const handleResize = () => {
+    const handleResize = (): void => {
       setIsSmallScreen(window.innerWidth >= breakpoint);
     };
 

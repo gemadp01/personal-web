@@ -3,9 +3,9 @@ import { Menu } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 export const DropdownMenu = ({ ...props }: { items: string[] }) => {
-  const { items } = props;
+  const { items }: { items: string[] } = props;
   const location = useLocation();
-  const currentPath = location.pathname;
+  const currentPath: string = location.pathname;
 
   return (
     <DropdownMenuPrimitive.Root>
