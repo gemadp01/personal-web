@@ -9,7 +9,7 @@ const AboutPage = () => {
     <main className="min-h-[80vh] flex items-center text-center">
       <div className="space-y-10 md:space-y-14 px-10">
         {isSmallScreen ? (
-          <h2 className="space-y-5">
+          <h2 className="space-y-5 dark:text-secondary">
             <span className="block">Hi, I’m Gema Dodi Pranata,</span>
             <span className="block">a Frontend Engineer</span>
           </h2>
@@ -19,7 +19,7 @@ const AboutPage = () => {
             <span className="block">a Frontend Engineer</span>
           </h4>
         )}
-        <p className="text-seventh">
+        <p className="text-seventh dark:text-extended">
           Hi! I’m a frontend developer who enjoys crafting responsive and
           user-friendly web apps. With a strong base in JavaScript, React, and
           Laravel, I love working in agile teams and taking on meaningful
