@@ -1,6 +1,8 @@
 import { DropdownMenu } from "./ui/DropdownMenu";
 import { useIsSmallScreen } from "../lib/utils";
 import { Link, useLocation } from "react-router-dom";
+import { Separator } from "@radix-ui/react-dropdown-menu";
+import { SwitchButton } from "./ui/SwitchButton";
 
 export const Header = () => {
   const location = useLocation();
@@ -12,7 +14,7 @@ export const Header = () => {
 
   return (
     <header className="w-full px-6 flex justify-between items-center h-24">
-      <h4 className="text-primary">Gema Dodi Pranata.</h4>
+      <h4 className="text-primary dark:text-secondary">Gema Dodi Pranata.</h4>
 
       <nav>
         {isSmallScreen ? (
@@ -26,8 +28,8 @@ export const Header = () => {
                     to={path}
                     className={`${
                       isActive
-                        ? "text-seventh pointer-events-none"
-                        : "text-primary hover:text-seventh"
+                        ? "text-seventh pointer-events-none dark:text-extended"
+                        : "text-primary hover:text-seventh dark:text-secondary dark:hover:text-extended"
                     }`}
                   >
                     {item}
@@ -35,6 +37,8 @@ export const Header = () => {
                 </li>
               );
             })}
+            <Separator className="w-[1px] bg-extended" />
+            <SwitchButton />
           </ul>
         ) : (
           <DropdownMenu items={navItems} />
