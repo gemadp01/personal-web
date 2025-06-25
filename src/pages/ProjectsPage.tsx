@@ -1,8 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "../components/ui/Button";
-import { ProjectCard } from "../components/ui/ProjectCard";
 import { useIsSmallScreen } from "../lib/utils";
 import { dataDummy } from "../lib/projects";
+import { ProjectAccordion } from "../components/ui/ProjectAccordion";
 
 const ProjectsPage = () => {
   const isSmallScreen: boolean = useIsSmallScreen(640);
@@ -20,16 +20,9 @@ const ProjectsPage = () => {
             and design approach.
           </p>
         </div>
+
         <div className="flex justify-evenly flex-wrap gap-y-10">
-          {dataDummy.map((project) => (
-            <ProjectCard
-              key={project.title}
-              {...project}
-              buttonTitle="GitHub"
-              withIcon={<ArrowRight className="mr-2 w-4 h-4" />}
-              iconPosition="right"
-            />
-          ))}
+          <ProjectAccordion data={dataDummy} />
         </div>
       </section>
       <section id="cta" className="bg-dark text-center space-y-8 py-12 px-10">
