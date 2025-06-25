@@ -3,13 +3,14 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { Link } from "react-router-dom";
 
 const button = cva(
-  "inline-flex items-center gap-2 px-5 py-2 mt-2 rounded-md shadow-sm transition font-medium hover:bg-gray-100",
+  "inline-flex items-center gap-2 px-5 py-2 mt-2 rounded-md shadow-sm transition font-medium",
   {
     variants: {
       color: {
         primary:
-          "bg-light text-primary border border-dark dark:bg-dark dark:text-secondary dark:border-light",
-        secondary: "bg-dark text-secondary dark:bg-light dark:text-primary",
+          " text-primary border border-dark  dark:text-secondary dark:border-light cursor-pointer",
+        secondary: " text-secondary dark:bg-light dark:text-primary",
+        active: "bg-dark text-secondary dark:bg-secondary dark:text-primary",
       },
       size: {
         sm: "text-sm",
@@ -32,6 +33,7 @@ type ButtonProps = {
   className?: string;
   icon?: React.ReactNode;
   iconPosition?: "left" | "right";
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 } & VariantProps<typeof button>;
 
 export const Button: React.FC<ButtonProps> = ({
@@ -44,6 +46,7 @@ export const Button: React.FC<ButtonProps> = ({
   iconPosition = "left",
   color,
   size,
+  onClick,
 }) => {
   const classNames = button({ color, size, className });
 
@@ -76,5 +79,9 @@ export const Button: React.FC<ButtonProps> = ({
     );
   }
 
-  return <button className={classNames}>{content}</button>;
+  return (
+    <button className={classNames} onClick={onClick}>
+      {content}
+    </button>
+  );
 };
