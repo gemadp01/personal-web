@@ -9,7 +9,8 @@ const button = cva(
       color: {
         primary:
           " text-primary border border-dark  dark:text-secondary dark:border-light cursor-pointer",
-        secondary: " text-secondary dark:bg-light dark:text-primary",
+        secondary:
+          " text-secondary border border-light dark:bg-light dark:text-primary",
         active: "bg-dark text-secondary dark:bg-secondary dark:text-primary",
       },
       size: {

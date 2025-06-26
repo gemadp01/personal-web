@@ -29,7 +29,7 @@ const AboutPage = () => {
           href="https://drive.google.com/file/d/13IpPGjuM2PqLxS2BbQ5uVd1RtbN1gQRp/view?usp=sharing"
           icon={<DownloadIcon className="mr-2 w-4 h-4" />}
           iconPosition="left"
-          color="secondary"
+          color="primary"
           external={true}
         >
           Download CV

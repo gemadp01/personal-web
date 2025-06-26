@@ -43,7 +43,7 @@ const ProjectsPage = () => {
         </p>
         <Button
           link="/contact"
-          color={"primary"}
+          color={"secondary"}
           icon={<ArrowRight className="mr-2 w-4 h-4" />}
           iconPosition="right"
         >
