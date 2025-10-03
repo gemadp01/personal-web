@@ -2,8 +2,12 @@ import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { Menu } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
-export const DropdownMenu = ({ ...props }: { items: string[] }) => {
-  const { items }: { items: string[] } = props;
+type DropdownMenuProps = {
+  items: string[];
+};
+
+export const DropdownMenu = ({ ...props }: DropdownMenuProps) => {
+  const { items }: DropdownMenuProps = props;
   const location = useLocation();
   const currentPath: string = location.pathname;
 
