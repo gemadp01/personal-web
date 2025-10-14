@@ -1,14 +1,15 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Link } from "react-router-dom";
+import clsx from "clsx";
 
 const button = cva(
-  "inline-flex items-center gap-2 px-5 py-2 mt-2 rounded-md shadow-sm transition font-medium",
+  "inline-flex justify-center items-center gap-2 px-5 py-2 mt-2 rounded-md shadow-sm transition font-medium",
   {
     variants: {
       color: {
         primary:
-          " text-primary border border-dark  dark:text-secondary dark:border-light cursor-pointer",
+          " text-primary border border-dark  dark:text-secondary dark:border-light cursor-pointer hover:bg-dark hover:text-secondary dark:hover:bg-light dark:hover:text-primary",
         secondary:
           " text-secondary border border-light dark:bg-light dark:text-primary",
         active: "bg-dark text-secondary dark:bg-secondary dark:text-primary",
@@ -26,42 +27,40 @@ const button = cva(
   }
 );
 
-type ButtonProps = {
+type TButtonProps = {
   children: React.ReactNode;
   link?: string;
   href?: string;
   external?: boolean;
   className?: string;
-  icon?: React.ReactNode;
+  icon?: React.ElementType;
   iconPosition?: "left" | "right";
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 } & VariantProps<typeof button>;
 
-export const Button: React.FC<ButtonProps> = ({
+export const Button = ({
   children,
   link,
   href,
   external = false,
   className,
-  icon,
+  icon: Icon,
   iconPosition = "left",
   color,
   size,
   onClick,
-}) => {
-  const classNames = button({ color, size, className });
-
+}: TButtonProps) => {
   const content = (
     <>
-      {icon && iconPosition === "left" && <span>{icon}</span>}
+      {Icon && iconPosition === "left" && <Icon className="mr-2 w-4 h-4" />}
       {children}
-      {icon && iconPosition === "right" && <span>{icon}</span>}
+      {Icon && iconPosition === "right" && <Icon className="ml-1 w-4 h-4" />}
     </>
   );
 
   if (link) {
     return (
-      <Link to={link} className={classNames}>
+      <Link to={link} className={clsx(button({ color, size }), className)}>
         {content}
       </Link>
     );
@@ -73,7 +72,7 @@ export const Button: React.FC<ButtonProps> = ({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={classNames}
+        className={clsx(button({ color, size }), className)}
       >
         {content}
       </a>
@@ -81,7 +80,10 @@ export const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <button className={classNames} onClick={onClick}>
+    <button
+      className={clsx(button({ color, size }), className)}
+      onClick={onClick}
+    >
       {content}
     </button>
   );

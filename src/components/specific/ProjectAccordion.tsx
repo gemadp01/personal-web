@@ -1,23 +1,22 @@
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
 import { ProjectCard } from "./ProjectCard";
-import { Button } from "./Button";
+import { Button } from "../common/Button";
 
-type ProjectType = {
+type TProjectType = {
   title: string;
   category: string;
   description: string;
-  image: string;
+  image?: string;
   link: string;
 };
 
-type ProjectAccordionProps = {
-  data: ProjectType[];
+type TProjectAccordionProps = {
+  data: TProjectType[];
 };
 
 const categories = ["Fullstack", "Frontend", "Backend", "UI UX"];
 
-export const ProjectAccordion: React.FC<ProjectAccordionProps> = ({ data }) => {
+export const ProjectAccordion = ({ data }: TProjectAccordionProps) => {
   const [activeTab, setActiveTab] = useState("Fullstack");
 
   const filteredProjects = data.filter(
@@ -33,19 +32,14 @@ export const ProjectAccordion: React.FC<ProjectAccordionProps> = ({ data }) => {
             key={category}
             onClick={() => setActiveTab(category)}
           >
-            {category}
+            {category === "UI UX" ? "UI/UX" : category}
           </Button>
         ))}
       </div>
 
       <div className="flex justify-evenly flex-wrap gap-5">
         {filteredProjects.map((project) => (
-          <ProjectCard
-            key={project.title}
-            {...project}
-            withIcon={<ArrowRight className="mr-2 w-4 h-4" />}
-            iconPosition="right"
-          />
+          <ProjectCard key={project.title} {...project} />
         ))}
       </div>
     </div>

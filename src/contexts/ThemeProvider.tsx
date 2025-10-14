@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { ThemeContext, Theme } from "./ThemeContext";
+import { ThemeContext } from "@/contexts/ThemeContext";
+import type { TTheme } from "@/types/themeContextType";
 
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
-  const [theme, setTheme] = useState<Theme>(() => {
-    const saved = localStorage.getItem("theme") as Theme | null;
+type TThemeProviderProps = {
+  children: React.ReactNode;
+};
+
+export const ThemeProvider = ({ children }: TThemeProviderProps) => {
+  const [theme, setTheme] = useState<TTheme>(() => {
+    const saved = localStorage.getItem("theme") as TTheme | null;
     return saved === "dark" || saved === "light" ? saved : "light";
   });
 
