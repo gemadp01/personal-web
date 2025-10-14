@@ -36,6 +36,7 @@ type TButtonProps = {
   icon?: React.ElementType;
   iconPosition?: "left" | "right";
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  disabled?: boolean;
 } & VariantProps<typeof button>;
 
 export const Button = ({
@@ -49,6 +50,7 @@ export const Button = ({
   color,
   size,
   onClick,
+  disabled = false,
 }: TButtonProps) => {
   const content = (
     <>
@@ -83,6 +85,7 @@ export const Button = ({
     <button
       className={clsx(button({ color, size }), className)}
       onClick={onClick}
+      disabled={disabled}
     >
       {content}
     </button>
