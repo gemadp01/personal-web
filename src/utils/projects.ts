@@ -36,7 +36,7 @@ export const dataDummy: Project[] = [
     title: "Catalog Store",
     description:
       "A web application that helps store owners showcase products to customers and allows users to mark products they’re interested in.",
-    link: "https://github.com/gemadp01/laravel9-simple-ecommerce",
+    link: "https://github.com/gemadp01/ojt-netkrom-frontend",
   },
   {
     image: "project-images/cafe-finder.png",
