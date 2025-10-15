@@ -47,6 +47,14 @@ export const dataDummy: Project[] = [
     link: "https://github.com/gemadp01/frontend-cafe-bbpvp",
   },
   {
+    image: "project-images/quran-web.png",
+    category: "Frontend",
+    title: "Al-Quran Web App",
+    description:
+      "Developed a Quran web app with search, bookmark, audio features, and more using React through AI-assisted development.",
+    link: "https://github.com/gemadp01/al-quran-web-app",
+  },
+  {
     image: "project-images/fastcampus-commerce.png",
     category: "Frontend",
     title: "FastCampus Commerce",
