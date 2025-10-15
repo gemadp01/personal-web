@@ -13,6 +13,8 @@ const button = cva(
         secondary:
           " text-secondary border border-light dark:bg-light dark:text-primary",
         active: "bg-dark text-secondary dark:bg-secondary dark:text-primary",
+        disabled:
+          "bg-gray-300 text-gray-500 cursor-not-allowed dark:bg-gray-700 dark:text-gray-400",
       },
       size: {
         sm: "text-sm",
