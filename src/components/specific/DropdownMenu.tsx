@@ -62,11 +62,11 @@ export const DropdownMenu = ({
                 className="border-b border-b-border-dark last:border-b-0"
               >
                 <NavLink
-                  to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  to={item === "About" ? "/" : `/${item.toLowerCase()}`}
                   className={({ isActive }) =>
                     navLinkClass(isActive) + " block px-4 py-2"
                   }
-                  {...{ end: item === "Home" }}
+                  {...{ end: item === "About" }}
                 >
                   {item}
                 </NavLink>
