@@ -178,7 +178,7 @@ const ContactPage = () => {
                   </div>
                   <div className="w-full">
                     {isSubmitting ? (
-                      <Button disabled className="w-full">
+                      <Button color="disabled" disabled className="w-full">
                         Sending...
                       </Button>
                     ) : (
