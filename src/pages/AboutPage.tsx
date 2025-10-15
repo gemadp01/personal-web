@@ -114,10 +114,10 @@ const AboutPage = () => {
               ))}
             </div>
           </div>
-          <Fade>
+          <Fade delay={500} triggerOnce>
             <div className="w-full flex justify-center mt-12">
               <Button
-                href="https://drive.google.com/file/d/13IpPGjuM2PqLxS2BbQ5uVd1RtbN1gQRp/view?usp=sharing"
+                href="https://drive.google.com/drive/folders/1Jjv8nxjC1wTamaphwNzMmUfLZB2dIV7p?usp=sharing"
                 icon={DownloadIcon}
                 iconPosition="left"
                 color="primary"
