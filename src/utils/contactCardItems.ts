@@ -21,7 +21,7 @@ export const contactCardItems: TContactCardItem[] = [
   {
     icon: MapPin,
     title: "Address",
-    detail: "KP. Waas RT 05 RW 01 Kecamatan Pameungpeuk Desa Sukasari",
+    detail: "Bandung, Indonesia",
   },
   {
     icon: Mail,
