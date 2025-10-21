@@ -103,8 +103,8 @@ const ContactPage = () => {
             </p>
           </Fade>
         </div>
-        <div className="px-4 sm:px-6 lg:px-12 grid md:grid-cols-2 gap-8 items-start">
-          <div>
+        <div className="w-full px-4 sm:px-6 lg:px-12 grid md:grid-cols-4 gap-8 items-start">
+          <div className="md:col-span-2">
             <Fade delay={500} cascade damping={0.1} triggerOnce>
               <h2 className="text-h2 text-center mb-8">
                 Let's discuss your Project
@@ -128,73 +128,77 @@ const ContactPage = () => {
             </Fade>
           </div>
 
-          <Fade delay={1000} cascade damping={0.1} triggerOnce>
-            <div className="bg-gradient-to-br from-inverse via-light to-inverse dark:bg-none dark:border dark:border-border-dark rounded-lg shadow-lg p-8">
-              <h2 className="text-center text-h2 mb-6">Get In Touch</h2>
-              <div>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                  <div className="mb-4">
-                    <input
-                      type="email"
-                      {...register("email", { required: "Email is required" })}
-                      placeholder="Your e-mail"
-                      className="w-full bg-transparent border border-border-dark rounded-lg px-4 py-3 text-primary dark:text-secondary placeholder-description focus:outline-none dark:focus:border-light transition"
-                      autoFocus
-                    />
-                    {errors.email && (
-                      <p className="text-sm text-red-500 mt-1">
-                        {errors.email.message?.toString() ||
-                          "Email is required"}
-                      </p>
-                    )}
-                  </div>
-                  <div className="mb-4">
-                    <input
-                      type="text"
-                      {...register("subject", { required: true })}
-                      placeholder="Subject"
-                      className="w-full bg-transparent border border-border-dark rounded-lg px-4 py-3 text-primary dark:text-secondary placeholder-description focus:outline-none dark:focus:border-light transition"
-                    />
-                    {errors.subject && (
-                      <p className="text-sm text-red-500 mt-1">
-                        {errors.subject.message?.toString() ||
-                          "Subject is required"}
-                      </p>
-                    )}
-                  </div>
-                  <div className="mb-6">
-                    <textarea
-                      {...register("message", { required: true })}
-                      placeholder="Message"
-                      rows={5}
-                      className="w-full bg-transparent border border-border-dark rounded-lg px-4 py-3 text-primary dark:text-secondary placeholder-description dark:placeholder-inverse focus:outline-none dark:focus:border-light transition resize-none"
-                    />
-                    {errors.message && (
-                      <p className="text-sm text-red-500 mt-1">
-                        {errors.message.message?.toString() ||
-                          "Message is required"}
-                      </p>
-                    )}
-                  </div>
-                  <div className="w-full">
-                    {isSubmitting ? (
-                      <Button color="disabled" disabled className="w-full">
-                        Sending...
-                      </Button>
-                    ) : (
-                      <Button
-                        icon={SendIcon}
-                        iconPosition="right"
-                        className="w-full"
-                      >
-                        Send
-                      </Button>
-                    )}
-                  </div>
-                </form>
+          <div className="md:col-span-2">
+            <Fade delay={1000} cascade damping={0.1} triggerOnce>
+              <div className="bg-gradient-to-br from-inverse via-light to-inverse dark:bg-none dark:border dark:border-border-dark rounded-lg shadow-lg p-8">
+                <h2 className="text-center text-h2 mb-6">Get In Touch</h2>
+                <div>
+                  <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className="mb-4">
+                      <input
+                        type="email"
+                        {...register("email", {
+                          required: "Email is required",
+                        })}
+                        placeholder="Your e-mail"
+                        className="w-full bg-transparent border border-border-dark rounded-lg px-4 py-3 text-primary dark:text-secondary placeholder-description focus:outline-none dark:focus:border-light transition"
+                        autoFocus
+                      />
+                      {errors.email && (
+                        <p className="text-sm text-red-500 mt-1">
+                          {errors.email.message?.toString() ||
+                            "Email is required"}
+                        </p>
+                      )}
+                    </div>
+                    <div className="mb-4">
+                      <input
+                        type="text"
+                        {...register("subject", { required: true })}
+                        placeholder="Subject"
+                        className="w-full bg-transparent border border-border-dark rounded-lg px-4 py-3 text-primary dark:text-secondary placeholder-description focus:outline-none dark:focus:border-light transition"
+                      />
+                      {errors.subject && (
+                        <p className="text-sm text-red-500 mt-1">
+                          {errors.subject.message?.toString() ||
+                            "Subject is required"}
+                        </p>
+                      )}
+                    </div>
+                    <div className="mb-6">
+                      <textarea
+                        {...register("message", { required: true })}
+                        placeholder="Message"
+                        rows={5}
+                        className="w-full bg-transparent border border-border-dark rounded-lg px-4 py-3 text-primary dark:text-secondary placeholder-description dark:placeholder-inverse focus:outline-none dark:focus:border-light transition resize-none"
+                      />
+                      {errors.message && (
+                        <p className="text-sm text-red-500 mt-1">
+                          {errors.message.message?.toString() ||
+                            "Message is required"}
+                        </p>
+                      )}
+                    </div>
+                    <div className="w-full">
+                      {isSubmitting ? (
+                        <Button color="disabled" disabled className="w-full">
+                          Sending...
+                        </Button>
+                      ) : (
+                        <Button
+                          icon={SendIcon}
+                          iconPosition="right"
+                          className="w-full"
+                        >
+                          Send
+                        </Button>
+                      )}
+                    </div>
+                  </form>
+                </div>
               </div>
-            </div>
-          </Fade>
+            </Fade>
+          </div>
         </div>
       </section>
     </main>
